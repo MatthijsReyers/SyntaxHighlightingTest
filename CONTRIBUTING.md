@@ -10,7 +10,7 @@ However if you do, please make sure to follow the contributing guidelines as des
 We request that you do not add languages to the repository if the language was made by you or if it is a code golf language that does not see widespread use.
 Any languages that see commercial or academic use are of course allowed.
 
-### Guidelines: file layout
+### File layout
 The first two lines of the document should be single line comments with a link to this repository and a list people who have contributed to the file.
 Specifically try to adhere to the following format: `Contributors: [name], [name], [name]`. If preffered using a nickname is allowed too.
 If the language does not have (single line) comments please use the standard way of commenting for the specific language or feel free to be creative if comments do not exist.
