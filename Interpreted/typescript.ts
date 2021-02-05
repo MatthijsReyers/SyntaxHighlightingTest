@@ -7,8 +7,8 @@ import {foo, bar} from "module";
 import "math";
 
 // Constants & global variables.
-const MAX_COUNTER = 9999;
-var activeMonths = ['April','August','December'];
+const MAX_COUNTER: number = 9999;
+var activeMonths: string[] = ['April','August','December'];
 
 /**
  * Doctype signature for sayHello() function.
@@ -21,13 +21,15 @@ export function sayHello(name) {
 }
 
 async function logData() {
-    var promise = await fetch('127.0.0.1/things.html');
-    data = await promise.json();
+    let promise = await fetch('127.0.0.1/things.html');
+    let data = await promise.json();
     console.log(data);
 }
 
 // Class that extends another class.
 class Demo extends Object {
+    
+    name: string;
 
     // Constructor for classes.
     constructor() {
@@ -37,7 +39,7 @@ class Demo extends Object {
     
     static fizzBuzz() {
 
-        checkLamba = (number) => {
+        let checkLamba = (number) => {
             let output = ""
             if (number % 3)
                 output += "FIZZ";
@@ -55,7 +57,7 @@ var typeCheckerLamba = obj => {
     if (obj === undefined)
         throw TypeError()
     else if (typeof obj == "boolean") {
-        console.log("The type is boolean")
+        console.log("The type is boolean");
         return "bool"
     }
     else return typeof obj;
@@ -70,11 +72,11 @@ document.onload = () => {
     }
 
     for (const key in options) {
-        const value = object[key];
+        const value = options[key];
         console.log(`key:${key}, value:${value}`);
     }
 
-    let numbers = [
+    let numbers: number[] = [
         1005,
         223,
         98.3,
@@ -90,22 +92,24 @@ document.onload = () => {
 
 
 
-class Shape {
-    constructor() {
-        // does nothing...
-    }
+interface Shape {
+    getArea();
 }
 
-class Square extends Shape {
-    constructor(w, h) {
-        super();
-        this.width = w
-        this.height = h
+class Square implements Shape
+{
+    width: number;
+    height: number;
+
+    constructor(w, h)
+    {
+        this.width = w;
+        this.height = h;
     }
 
-    static getArea() {
+    getArea() {
         return this.width * this.height;
     }
 }
 
-let sq = new Square(10,6);
+let sq: Square = new Square(10,6);
